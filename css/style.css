@@ -1,0 +1,450 @@
+html, body, div {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+img {
+display: block;
+width: 100%;
+}
+
+footer, header, menu, nav, section {
+	display: block;
+}
+
+
+
+
+
+html{
+	box-sizing: border-box; /*border-box позволяет значения padding и border вычитать из ширины и длины блока*/
+}
+*, *::after, *::before {
+box-sizing: inherit;
+}
+
+body{
+	font-family: "Montserrat", Arial, sans-serif;
+    font-style: normal;
+	font-size: 16px;
+	line-height: 1.2;
+	font-weight:normal;
+	color:#171f25;
+	background:#eeeff4;
+}
+
+.wrapper{
+	max-width:1140px;
+	margin:0 auto; /* выровнять по центру внешнего контейнера*/	
+	padding: 0 15px;
+}
+
+/*------------стили для header-------*/
+
+.header{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	transition: .2s linear;
+	padding-bottom: 20px;
+    z-index: 999;
+}
+.header_active{
+    background: #232323;
+}
+.header_wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	/*align-items: flex-end;*/
+	justify-content: space-between;	
+	padding-top:30px;	
+}
+
+
+.header_list{       /*контейнер для меню*/
+	display: flex;
+	flex-wrap: wrap;	
+}
+.header_item{
+	margin-right: 45px;	
+}
+.header_item:last-child{
+	margin-right:0;	
+}
+ul.header_list {
+list-style: none;
+}
+.header_link{
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 150%;
+	color: #fff;
+	text-decoration:none;
+}
+.header_link:hover, .header_link:focus, .header_link:active{
+	opacity: .75;
+}
+
+
+.header_burger{
+    display: none;
+    width: 40px;
+    height: 28px;
+    position: relative;
+}
+
+.burger_line{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+}
+
+.burger_line_first{
+    top: 0;
+}
+
+.burger_line_second{
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+.burger_line_third{
+    bottom: 0;
+}
+
+/*------------------------------------*/
+
+/*----------стили ---------------------*/
+.intro{
+	height:510px;
+	background: url(../img/fon.png) no-repeat center;
+	background-size:cover;
+	padding-top:120px;	
+}
+
+.intro_title{
+	max-width:546px;
+	font-weight: bold;
+	font-size: 50px;
+	line-height: 60px;
+	color: #fff;
+	margin-bottom: 22px;
+}
+.intro_subtitle{
+	max-width: 546px;
+	color: #fff;
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 59px;
+}
+/*------------------------------------*/
+
+/*-----стили для рекомендуем-------------------------------*/
+.recomend_wrap{
+	max-width:1140px;
+	margin:0 auto;
+	padding: 0 15px;	
+}
+
+.recomend_cards{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-column-gap:55px;	
+}
+
+.recomend_card{
+	grid-column: span 1;
+	margin-bottom: 50px;
+	
+	
+box-sizing: border-box;
+/*border-radius: 10px;
+box-shadow: 0px 6px 35px rgba(0, 0, 0, 0.08);*/
+}
+.recomend_card-pic{
+	margin: 10px;
+}
+.recomend_card-title{
+margin: 10px;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 160%;
+text-align: center;
+
+color: #000000;
+
+opacity: 0.6;
+}
+.recomend_title {
+	text-align:center;
+	font-style: normal;
+font-weight: 500;
+font-size: 36px;
+line-height: 140%;
+color: #000000;
+}
+.recomend_text{
+	/*text-align:center;*/
+}
+/*------------------------------------*/
+
+/*-------стили для категорий-----------*/
+
+.categories_wrap{	
+	margin:0 auto;
+	background: url(../img/fon_marki.png) no-repeat center;
+	background-size: cover;
+	padding-left:50px;
+	padding-right:50px;
+	/*
+	max-width:1140px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+	border-radius: 10px;
+	box-shadow: 0px 6px 35px rgba(0, 0, 0, 0.08);*/
+}
+
+.categories_title{
+	text-align:center;
+	font-style: normal;
+font-weight: 500;
+font-size: 36px;
+line-height: 140%;
+color: #000000;
+padding-top:30px;
+}
+
+.categories_cols{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-gap:55px;	
+}
+
+.categories_col{
+	grid-column: span 1;
+	margin-bottom: 50px;
+	/*background: #fff;*/
+	
+}
+.categories_link{
+	font-weight: 500;
+font-size: 20px;
+line-height: 120%;
+	text-decoration:none;
+	color: #1A507B;
+}
+.categories_link:hover, .categories_link:focus, .categories_link:active{
+	color:#D54A41;
+}
+/*-------------------------------------*/
+
+
+/*-----------стили для формы отправки-------------------------*/
+.btn {
+    background-color: #232323; 
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius: 4px;
+}
+.btmspace{
+	padding: 10px;
+    
+}
+/*-----------------------*/
+
+
+
+/*-------стили для контактов-----------*/
+
+.contacts_link{
+	font-weight: 500;
+font-size: 20px;
+line-height: 120%;
+	text-decoration:none;
+	color: #1A507B;
+}
+.contacts_link:hover, .contacts_link:focus, .contacts_link:active{
+	color:#D54A41;
+}
+.ytext{
+	color:#fde660;
+	font-weight:bold;
+}
+/*-------------------------------------*/
+
+/*-------стили для отображения информации об одном курсе-----------*/
+
+.kurs_img{
+	width: 200px;
+	display:block;
+	margin:auto;
+	
+ 	
+}
+.kurs_info{
+	
+}
+/*-------------------------------------*/
+
+/*----------стили для футера---------*/
+
+footer {
+	margin-top:50px;
+	padding: 30px 0;
+	background: #3a3a3a;
+	color: white;
+	min-height:200px;
+	height:100%;
+}
+.footer-col {
+width: 33.3333333333%; 
+float: left;
+}
+.ymap{
+	padding-top: 120px;	
+}
+.footer-link{
+    font-size: 14px;
+    line-height: 24px;
+    color: #ffc107;   
+	text-decoration:none;	
+}
+.footer-link:hover, .footer-link:focus, .footer-link:active{
+    opacity: .75;
+}
+.footer_logo-pic{
+	width: 50%;
+	display:inline;
+}
+
+/*-------------------------------------*/
+
+
+/*----------media---------*/
+@media screen and (max-width: 767px) {
+    
+    .header_burger {
+        display: block;
+    }
+    .header_wrapper {
+        padding-top: 28px;
+    }
+    .header_nav{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #000;
+        z-index: 10;
+        padding: 75px;
+		transform: translateX(100%);        
+        transition: .2s all linear;
+    }
+    .header_nav_active{
+		transform: translateX(0);
+      
+    }
+    .header_item{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    .header_item:last-child{
+        margin-bottom: 0;
+    }
+    .header_link{
+        font-size: 42px;
+        line-height: 48px;
+    }
+    .header_nav-close{
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 11;
+    }
+    .header_nav-close-line{
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+    }
+    .header_nav-close-line:first-child{
+		transform: translateY(-50%) rotate(45deg);
+        
+    }
+    .header_nav-close-line:last-child{
+		transform: translateY(-50%) rotate(-45deg);
+       
+    }
+	.intro {
+        padding-top: 125px;
+    }
+    .intro_title {
+        font-size: 40px;
+        line-height: 48px;
+    }
+	
+	.categories{
+        margin-bottom: 36px;
+    }
+    .categories_col {        
+        grid-column: span 3;
+        margin-bottom: 40px;
+    }   
+	
+	  	
+	
+}
+
+@media screen and (max-width: 500px) {
+    .header__nav {
+        padding: 75px 30px;
+    }
+	.recomend{
+        margin-bottom: 36px;
+    }
+    .recomend_card {        
+        grid-column: span 3;
+        margin-bottom: 40px;
+    }
+    .recomend_card-pic {
+        margin-bottom: 20px;
+    }
+    .recomend_card-title {
+        margin-bottom: 12px;
+    }
+    
+	.footer-col {
+float: none;
+margin-bottom: 20px;
+width: 100%;
+text-align: center;
+}
+.footer-col:last-child {
+text-align: center;
+margin-bottom: 0;
+}
+}
+/*-------------------------------------*/
