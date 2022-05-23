@@ -1,5 +1,5 @@
 html, body, div {
-  margin: 0;
+	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
@@ -14,9 +14,6 @@ width: 100%;
 footer, header, menu, nav, section {
 	display: block;
 }
-
-
-
 
 
 html{
@@ -58,8 +55,7 @@ body{
 }
 .header_wrapper{
 	display: flex;
-	flex-wrap: wrap;
-	/*align-items: flex-end;*/
+	flex-wrap: wrap;	
 	justify-content: space-between;	
 	padding-top:30px;	
 }
@@ -88,7 +84,6 @@ list-style: none;
 .header_link:hover, .header_link:focus, .header_link:active{
 	opacity: .75;
 }
-
 
 .header_burger{
     display: none;
@@ -123,7 +118,7 @@ list-style: none;
 
 /*------------------------------------*/
 
-/*----------стили ---------------------*/
+/*----------стили для основной части---------------------*/
 .intro{
 	height:510px;
 	background: url(../img/fon.png) no-repeat center;
@@ -148,105 +143,160 @@ list-style: none;
 }
 /*------------------------------------*/
 
-/*-----стили для рекомендуем-------------------------------*/
-.recomend_wrap{
+/*-----стили для марок-------------------------------*/
+.marki{
+	padding-top:40px;
+	background: url(../img/fon_marki.png) no-repeat center;
+}
+.marki_wrap{
 	max-width:1140px;
 	margin:0 auto;
 	padding: 0 15px;	
 }
 
-.recomend_cards{
+
+/*-----стили для Выберите, что вас интересует-------------------------------*/
+
+
+.interes_wrap{
+	max-width:1140px;
+	margin:0 auto;
+	padding: 0 15px;		
+}
+
+.interes_cards{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-column-gap:55px;	
 }
 
-.recomend_card{
+.interes_card{
 	grid-column: span 1;
 	margin-bottom: 50px;
-	
-	
-box-sizing: border-box;
-/*border-radius: 10px;
-box-shadow: 0px 6px 35px rgba(0, 0, 0, 0.08);*/
+	box-sizing: border-box;
 }
-.recomend_card-pic{
+.interes_card-pic{
 	margin: 10px;
 }
-.recomend_card-title{
-margin: 10px;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 160%;
-text-align: center;
 
-color: #000000;
-
-opacity: 0.6;
-}
-.recomend_title {
+.interes_title {
 	text-align:center;
 	font-style: normal;
-font-weight: 500;
-font-size: 36px;
-line-height: 140%;
-color: #000000;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 140%;
+	color: #000000;
 }
-.recomend_text{
-	/*text-align:center;*/
+
+/*чек-бокс*/
+.checks{
+	background:#fff;
+	margin: 10px;
 }
+.check_option{
+	font-size: 18px;	
+	display: flex;
+	flex-wrap: wrap; 
+}
+.check_input{
+	font-size: 26px;	
+}
+
 /*------------------------------------*/
 
-/*-------стили для категорий-----------*/
 
-.categories_wrap{	
-	margin:0 auto;
-	background: url(../img/fon_marki.png) no-repeat center;
-	background-size: cover;
-	padding-left:50px;
-	padding-right:50px;
-	/*
-	max-width:1140px;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	box-sizing: border-box;
-	border-radius: 10px;
-	box-shadow: 0px 6px 35px rgba(0, 0, 0, 0.08);*/
-}
+/*-------------Слайдер--------------------*/
 
-.categories_title{
-	text-align:center;
-	font-style: normal;
-font-weight: 500;
-font-size: 36px;
-line-height: 140%;
-color: #000000;
-padding-top:30px;
+/* Слайдер */
+.slider {
+  position: relative;
+  overflow: hidden;
 }
+.slider__wrapper {
+  display: flex;
+  transition: transform 0.6s ease; /* 0.6 длительность смены слайда в секундах */
+}
+.slider__item {
+  flex: 0 0 25%; /* определяет количество активных слайдов (в данном случае 4 */
+  max-width: 25%; /* определяет количество активных слайдов (в данном случае 4 */
+}
+.slider__content_header {
+      position: relative;
+    }
 
-.categories_cols{
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-column-gap:55px;	
-}
+.slider__content_img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+    }
 
-.categories_col{
-	grid-column: span 1;
-	margin-bottom: 50px;
-	/*background: #fff;*/
-	
+.slider__content_section {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: #009688;
+      color: #fff;
+      padding: 4px 8px;
+    }
+
+.slider__content_title {
+      background: #f5f5f5;
+      color: #424242;
+      white-space: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1.3;
+      padding: 10px 15px;
+      margin: 0;
+      height: 52px;
+    }
+
+
+/* СТИЛИ ДЛЯ КНОПОК "НАЗАД" И "ВПЕРЁД" */
+.slider__control {
+  position: absolute;
+  display: none;  
+  top: 50%;
+  transform: translateY(-50%);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 40px; /* ширина кнопки */
+  height: 50px; /* высота кнопки */ 
+  opacity: .5; /* прозрачность */
+  background: #000; /* цвет фона */
 }
-.categories_link{
-	font-weight: 500;
-font-size: 20px;
-line-height: 120%;
-	text-decoration:none;
-	color: #1A507B;
+.slider__control_show {
+  display: flex;
 }
-.categories_link:hover, .categories_link:focus, .categories_link:active{
-	color:#D54A41;
+.slider__control:hover,
+.slider__control:focus {
+  text-decoration: none;
+  outline: 0;
+  opacity: .9; /* прозрачность */
 }
-/*-------------------------------------*/
+.slider__control_left {
+  left: 0;
+}
+.slider__control_right {
+  right: 0;
+}
+.slider__control::before {
+  content: '';
+  display: inline-block;
+  width: 20px; /* ширина иконки (стрелочки) */
+  height: 20px; /* высота иконки (стрелочки) */
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+}
+.slider__control_left::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+.slider__control_right::before {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+/*----------------*/
+
 
 
 /*-----------стили для формы отправки-------------------------*/
@@ -267,6 +317,9 @@ line-height: 120%;
 	padding: 10px;
     
 }
+.textform{
+	width:90%;
+}
 /*-----------------------*/
 
 
@@ -275,8 +328,8 @@ line-height: 120%;
 
 .contacts_link{
 	font-weight: 500;
-font-size: 20px;
-line-height: 120%;
+	font-size: 20px;
+	line-height: 120%;
 	text-decoration:none;
 	color: #1A507B;
 }
@@ -289,19 +342,7 @@ line-height: 120%;
 }
 /*-------------------------------------*/
 
-/*-------стили для отображения информации об одном курсе-----------*/
 
-.kurs_img{
-	width: 200px;
-	display:block;
-	margin:auto;
-	
- 	
-}
-.kurs_info{
-	
-}
-/*-------------------------------------*/
 
 /*----------стили для футера---------*/
 
@@ -412,9 +453,7 @@ float: left;
     .categories_col {        
         grid-column: span 3;
         margin-bottom: 40px;
-    }   
-	
-	  	
+    }  
 	
 }
 
@@ -422,29 +461,29 @@ float: left;
     .header__nav {
         padding: 75px 30px;
     }
-	.recomend{
+	.interes{
         margin-bottom: 36px;
     }
-    .recomend_card {        
+    .interes_card {        
         grid-column: span 3;
         margin-bottom: 40px;
     }
-    .recomend_card-pic {
+    .interes_card-pic {
         margin-bottom: 20px;
     }
-    .recomend_card-title {
+    .interes_card-title {
         margin-bottom: 12px;
     }
     
 	.footer-col {
-float: none;
-margin-bottom: 20px;
-width: 100%;
-text-align: center;
-}
+		float: none;
+		margin-bottom: 20px;
+		width: 100%;
+		text-align: center;
+	}
 .footer-col:last-child {
-text-align: center;
-margin-bottom: 0;
-}
+		text-align: center;
+		margin-bottom: 0;
+	}
 }
 /*-------------------------------------*/
